@@ -1,0 +1,42 @@
+# ADK Configuration for BlogFlow AI
+
+# Project Information
+name: blogflow-ai
+version: 2.0.0
+description: Multi-agent blog generation system using Google ADK
+
+# Default Model
+default_model: gemini-2.0-flash-exp
+
+# Agent Configuration
+agents:
+  root: blog_flow_coordinator
+  
+  # Specialist agents
+  specialists:
+    - researcher
+    - writer
+    - editor
+    - seo_optimizer
+
+# Orchestration Settings
+orchestration:
+  mode: hierarchical
+  max_iterations: 3
+  quality_threshold: 7.0
+  
+# Tool Configuration
+tools:
+  - google_search
+  
+# Output Configuration
+output:
+  directory: output
+  format: markdown
+  include_metadata: true
+
+# Development Settings
+dev:
+  ui_port: 8000
+  log_level: INFO
+  enable_traces: true
